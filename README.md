@@ -1,3 +1,131 @@
+# Gestión de Gastos
+
+Este proyecto es una aplicación web desarrollada con **Laravel 11.x**, que permite gestionar y filtrar los gastos de una empresa en función de un rango de fechas seleccionado por el usuario. La aplicación también calcula automáticamente el total de los montos dentro del rango seleccionado.
+
+## **Características**
+
+- Filtrar gastos por rango de fechas.
+- Mostrar la relación entre empleados, departamentos y gastos.
+- Calcular automáticamente la sumatoria de los montos de los gastos filtrados.
+- Limpiar el formulario para realizar nuevas consultas.
+- Interfaz limpia y moderna gracias a **Bootstrap 5**.
+
+## **Requisitos del Sistema**
+
+- **PHP**: >= 8.3
+- **Composer**
+- **MySQL** o cualquier base de datos compatible con Laravel.
+- **Node.js y npm** (para compilar los recursos frontend si es necesario).
+
+## **Instalación**
+
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local:
+
+1. Clonar el repositorio:
+    ```bash
+    git clone https://github.com/JosueLozada08/minicore.git
+    cd minicore
+    ```
+
+2. Instalar las dependencias de PHP con Composer:
+    ```bash
+    composer install
+    ```
+
+3. Configurar el archivo `.env`:
+    - Copia el archivo `.env.example` a `.env`:
+        ```bash
+        cp .env.example .env
+        ```
+    - Configura los valores de conexión a la base de datos:
+        ```env
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=nombre_de_tu_base_de_datos
+        DB_USERNAME=tu_usuario
+        DB_PASSWORD=tu_contraseña
+        ```
+
+4. Generar la clave de la aplicación:
+    ```bash
+    php artisan key:generate
+    ```
+
+5. Migrar las tablas y poblarlas con datos:
+    ```bash
+    php artisan migrate --seed
+    ```
+
+
+## **Uso**
+
+1. Ingresa un rango de fechas en el formulario de filtrado para consultar los gastos registrados en ese periodo.
+2. Haz clic en "Filtrar" para ver los resultados en la tabla.
+3. El total de los montos dentro del rango se muestra justo arriba de la tabla.
+4. Haz clic en "Limpiar" para restablecer el formulario y ver todos los gastos registrados.
+
+## **Estructura del Proyecto**
+
+### **Modelos Principales**
+- `Departamento`: Representa los departamentos dentro de la empresa.
+- `Empleado`: Representa los empleados asociados a los departamentos.
+- `Gasto`: Representa los gastos relacionados con los empleados.
+
+### **Controlador Principal**
+- `GastoController`: Maneja el filtrado por fechas, cálculo de totales, y la lógica para limpiar los filtros.
+
+### **Base de Datos**
+El proyecto utiliza una base de datos con las siguientes tablas:
+- `departamentos`: Almacena los nombres de los departamentos.
+- `empleados`: Relaciona a los empleados con los departamentos.
+- `gastos`: Registra los detalles de los gastos, incluyendo su monto, fecha, y empleado asociado.
+
+## **Capturas de Pantalla**
+
+### **Vista Principal**
+![Vista principal de la aplicación](https://via.placeholder.com/800x400)
+
+### **Resultados Filtrados**
+![Resultados filtrados](https://via.placeholder.com/800x400)
+
+## **Tecnologías Utilizadas**
+
+- **Framework Backend**: Laravel 11.x
+- **Frontend**: Blade con Bootstrap 5.
+- **Base de Datos**: MySQL.
+- **Despliegue Local**: Laragon.
+
+## **Contribuciones**
+
+Si deseas contribuir a este proyecto:
+1. Haz un fork del repositorio.
+2. Crea una rama con tu nueva funcionalidad:
+    ```bash
+    git checkout -b nueva-funcionalidad
+    ```
+3. Haz un commit de tus cambios:
+    ```bash
+    git commit -m "Agregada nueva funcionalidad"
+    ```
+4. Haz push a la rama:
+    ```bash
+    git push origin nueva-funcionalidad
+    ```
+5. Abre un Pull Request en este repositorio.
+
+## **Contacto**
+
+- Autor: [Tu Nombre]
+- Email: [tu-email@example.com]
+- LinkedIn: [https://linkedin.com/in/tu-usuario](https://linkedin.com/in/tu-usuario)
+
+
+
+
+
+
+<!-- aqui empieza el readme de laravel -->
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
